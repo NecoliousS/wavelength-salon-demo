@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Wavelength SMS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        nav { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #6366f1; text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #6366f1; }
+        
+        .page-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; text-align: center; }
+        .page-header h1 { font-size: 3rem; }
+        
+        .contact-section { padding: 80px 0; background: #f8fafc; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        
+        .contact-info h2 { font-size: 2rem; margin-bottom: 1rem; color: #1e293b; }
+        .contact-info p { color: #555; margin-bottom: 2rem; }
+        
+        .info-item { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
+        .info-icon { font-size: 1.5rem; margin-right: 1rem; color: #6366f1; }
+        .info-content h3 { margin-bottom: 0.25rem; color: #1e293b; }
+        .info-content p { color: #666; margin: 0; }
+        
+        .contact-form { background: white; padding: 3rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .contact-form h2 { margin-bottom: 2rem; color: #1e293b; }
+        
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #374151; }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 5px; font-family: inherit; font-size: 1rem; 
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+            outline: none; border-color: #6366f1; 
+        }
+        
+        .submit-btn { 
+            width: 100%; padding: 14px; background: #6366f1; color: white; border: none; border-radius: 5px; 
+            font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background 0.3s; 
+        }
+        .submit-btn:hover { background: #4f46e5; }
+        
+        .map { background: #e5e7eb; height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666; margin-top: 2rem; }
+        
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-form { padding: 2rem 1rem; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Wavelength SMS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Drop us a line.</p>
+        </div>
+    </div>
+
+    <section class="contact-section">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Have questions about our services? Want to see a demo? Looking for a custom solution? We're here to help.</p>
+                
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>hello@wavelengthsms.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📱</div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Address</h3>
+                        <p>123 Innovation Drive<br>San Francisco, CA 94107</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">🕐</div>
+                    <div class="info-content">
+                        <h3>Hours</h3>
+                        <p>Mon-Fri: 9AM - 6PM PST</p>
+                    </div>
+                </div>
+
+                <div class="map">
+                    [Map Placeholder - Add Google Maps Embed Here]
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                
+                <!-- FORM ACTION: Sign up at formspree.io (free) and replace YOUR_FORM_ID -->
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">I'm interested in...</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select an option...</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Pricing Information">Pricing Information</option>
+                            <option value="API Integration">API Integration</option>
+                            <option value="Enterprise Solution">Enterprise Solution</option>
+                            <option value="Partnership">Partnership Opportunity</option>
+                            <option value="Support">Technical Support</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or question..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">
+                        We typically respond within 24 hours.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Wavelength SMS. All rights reserved.</p>
+            <p>Dramatic results, no drama.</p>
+        </div>
+    </footer>
+</body>
+</html>
