@@ -3,625 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wave Lengths Salon | Premium Hair Styling in Jackson, MS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Wavelength SMS - Dramatic Results, No Drama</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --gold: #D4AF37;
-            --dark: #1a1a1a;
-            --light: #fafafa;
-            --gray: #666;
-            --accent: #2c2c2c;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
         /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark);
-            letter-spacing: 3px;
-        }
-
-        .logo span {
-            color: var(--gold);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        .cta-btn {
-            background: var(--dark);
-            color: white !important;
-            padding: 0.8rem 1.8rem;
-            border-radius: 0;
-            transition: all 0.3s;
-        }
-
-        .cta-btn:hover {
-            background: var(--gold);
-            color: var(--dark) !important;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(212,175,55,0.03) 50%, transparent 70%);
-            transform: rotate(15deg);
-        }
-
-        .hero-content {
-            z-index: 2;
-            max-width: 900px;
-            padding: 0 2rem;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-            display: block;
-            font-size: 1.2rem;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--gray);
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease 0.2s both;
-            font-weight: 300;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .btn-primary {
-            background: var(--dark);
-            color: white;
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            border: 2px solid var(--dark);
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--dark);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--dark);
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 2px solid var(--dark);
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--gold);
-            border-color: var(--gold);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 8rem 5%;
-            background: white;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            padding: 3rem 2rem;
-            text-align: center;
-            border: 1px solid #eee;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .feature-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        /* Services Preview */
-        .services {
-            padding: 8rem 5%;
-            background: var(--dark);
-            color: white;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 4rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-item {
-            padding: 2rem;
-        }
-
-        .service-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--gold);
-        }
-
-        .service-item p {
-            color: #aaa;
-            font-weight: 300;
-        }
-
-        /* Testimonial */
-        .testimonial {
-            padding: 8rem 5%;
-            background: linear-gradient(to right, #f9f9f9, #fff);
-            text-align: center;
-        }
-
-        .testimonial-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .quote-icon {
-            font-size: 5rem;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: -2rem;
-            opacity: 0.3;
-        }
-
-        .testimonial blockquote {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-style: italic;
-            margin-bottom: 2rem;
-            line-height: 1.4;
-        }
-
-        .stars {
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--gray);
-        }
-
+        nav { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #6366f1; text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #6366f1; }
+        .mobile-menu { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; }
+        .slogan { font-style: italic; font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.95; }
+        .btn { display: inline-block; padding: 12px 30px; background: #fff; color: #6366f1; text-decoration: none; border-radius: 5px; font-weight: bold; transition: transform 0.3s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn-white { background: transparent; color: white; border: 2px solid white; margin-left: 1rem; }
+        
+        /* Features */
+        .features { padding: 80px 0; background: #f8fafc; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1e293b; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .feature-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .feature-card h3 { margin-bottom: 1rem; color: #1e293b; }
+        
         /* CTA Section */
-        .cta-section {
-            padding: 8rem 5%;
-            background: var(--gold);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .cta-section p {
-            font-size: 1.3rem;
-            color: var(--dark);
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-
-        /* Contact / Footer */
-        .contact {
-            padding: 6rem 5%;
-            background: var(--dark);
-            color: white;
-            text-align: center;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto 4rem;
-        }
-
-        .contact-item h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: var(--gold);
-        }
-
-        .demo-notice {
-            border-top: 1px solid #333;
-            padding-top: 4rem;
-            margin-top: 4rem;
-        }
-
-        .demo-notice h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .demo-notice p {
-            color: #888;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            font-style: italic;
-        }
-
-        .demo-tag {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--dark);
-            padding: 0.5rem 1.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile Responsive */
+        .cta { background: #1e293b; color: white; padding: 80px 0; text-align: center; }
+        .cta h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        /* Footer */
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; }
+        
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-header h2,
-            .services h2,
-            .cta-section h2 {
-                font-size: 2rem;
-            }
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .hero h1 { font-size: 2rem; }
+            .btn-white { margin-left: 0; margin-top: 1rem; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
     <nav>
-        <div class="logo">WAVE <span>LENGTHS</span></div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="#contact" class="cta-btn">Book Now</a></li>
-        </ul>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Wavelength SMS</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>
-                <span>Jackson's Premier Salon</span>
-                Luxury Hair Styling<br>Since 1994
-            </h1>
-            <p>30+ years of exceptional service. Kerastase exclusive partner. <br>Where expertise meets elegance.</p>
-            <div class="hero-buttons">
-                <a href="tel:601-956-6224" class="btn-primary">Call (601) 956-6224</a>
-                <a href="#features" class="btn-secondary">See What's New</a>
+        <div class="container">
+            <h1>Business SMS That Actually Works</h1>
+            <p class="slogan">"Dramatic results, no drama"</p>
+            <p>Reach your customers where they are. Simple, powerful, reliable text messaging for modern businesses.</p>
+            <a href="services.html" class="btn">Explore Services</a>
+            <a href="contact.html" class="btn btn-white">Get in Touch</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Two-Way Messaging</h3>
+                    <p>Have real conversations with your customers. Our platform supports seamless two-way SMS communication.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Mass Texting</h3>
+                    <p>Send thousands of messages instantly. Perfect for promotions, updates, and emergency notifications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>API Integration</h3>
+                    <p>Developer-friendly API that integrates with your existing systems in minutes, not days.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="section-header">
-            <h2>Your New Website Includes</h2>
-            <p>Everything you need to attract more clients and grow your business</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="feature-icon">📱</span>
-                <h3>Mobile-Friendly</h3>
-                <p>Looks perfect on phones, tablets, and desktops — customers can browse your services anywhere, anytime.</p>
-            </div>
-            
-            <div class="feature-card">
-                <span class="feature-icon">⚡</span>
-                <h3>Fast Loading</h3>
-                <p>Optimized for speed — no waiting, even on slower Mississippi internet connections.</p>
-            </div>
-            
-            <div class="feature-card">
-                <span class="feature-icon">🔍</span>
-                <h3>Google Search Ready</h3>
-                <p>Shows up when people search "hair salon Jackson MS" or "best stylist near me."</p>
-            </div>
-            
-            <div class="feature-card">
-                <span class="feature-icon">🗺️</span>
-                <h3>Google Maps Integration</h3>
-                <p>Easy directions, hours, and reviews synced with your Google Business listing.</p>
-            </div>
-            
-            <div class="feature-card">
-                <span class="feature-icon">📧</span>
-                <h3>Contact Form</h3>
-                <p>Customers can message you directly for appointments — no phone calls required.</p>
-            </div>
-            
-            <div class="feature-card">
-                <span class="feature-icon">🔄</span>
-                <h3>Easy Updates</h3>
-                <p>Change prices, hours, or photos anytime — I show you how, no tech skills needed.</p>
-            </div>
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Communication?</h2>
+            <p>Join thousands of businesses already using Wavelength SMS.</p>
+            <br>
+            <a href="contact.html" class="btn" style="background: #6366f1; color: white;">Start Today</a>
         </div>
     </section>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <h3>Hair Styling</h3>
-                <p>Everyday cuts to special occasion looks</p>
-            </div>
-            <div class="service-item">
-                <h3>Color Specialists</h3>
-                <p>Our specialty — vibrant, lasting color</p>
-            </div>
-            <div class="service-item">
-                <h3>Kerastase Treatments</h3>
-                <p>Exclusive partner salon products</p>
-            </div>
-            <div class="service-item">
-                <h3>Pampering Experience</h3>
-                <p>Relax and enjoy proprietary treatments</p>
-            </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Wavelength SMS. All rights reserved.</p>
+            <p>Dramatic results, no drama.</p>
         </div>
-    </section>
-
-    <!-- Testimonial -->
-    <section class="testimonial" id="testimonials">
-        <div class="testimonial-content">
-            <div class="quote-icon">"</div>
-            <blockquote>
-                Best salon in Jackson! The stylists are true professionals, the atmosphere is relaxing, and I always leave feeling fabulous. My go-to spot for over 5 years!
-            </blockquote>
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-author">— Verified Google Review</p>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready for a Website That Works?</h2>
-            <p>Join the hundreds of Mississippi businesses growing their online presence.</p>
-            <a href="tel:718-541-0794" class="btn-secondary" style="border-color: var(--dark); color: var(--dark);">Let's Talk: (718) 541-0794</a>
-        </div>
-    </section>
-
-    <!-- Contact / Footer -->
-    <section class="contact" id="contact">
-        <div class="contact-grid">
-            <div class="contact-item">
-                <h3>Call Me</h3>
-                <a href="tel:718-541-0794">(718) 541-0794</a>
-            </div>
-            <div class="contact-item">
-                <h3>Email Me</h3>
-                <a href="mailto:Necolious23@gmail.com">Necolious23@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <h3>Connect</h3>
-                <a href="https://www.linkedin.com/in/necolious-shaw-442873396/" target="_blank">LinkedIn Profile</a>
-            </div>
-        </div>
-
-        <div class="demo-notice">
-            <span class="demo-tag">Demo Site</span>
-            <h3>This is only the beginning.</h3>
-            <p>"This demo was built in one afternoon. Imagine what we could do together."</p>
-            <p style="color: #666; font-size: 0.9rem; margin-top: 2rem;">
-                Original site: <a href="https://wavelengthsms.com/" target="_blank" style="color: var(--gold);">wavelengthsms.com</a>
-            </p>
-        </div>
-    </section>
-
+    </footer>
 </body>
 </html>
