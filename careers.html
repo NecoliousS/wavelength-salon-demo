@@ -44,4 +44,137 @@
         .contact-item { text-align: center; }
         .contact-item strong { display: block; color: #c0a080; margin-bottom: 0.5rem; }
         .contact-item a { color: #fff; text-decoration: none; }
-        footer { background: #0a0a0a; color: #666; text-align: center; padding: 2rem 0; font-size: 0.8rem;
+        footer { background: #0a0a0a; color: #666; text-align: center; padding: 2rem 0; font-size: 0.8rem; }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .two-col { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">WAVE <span>LENGTHS</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Careers</h1>
+        <p style="color: #fff; font-style: italic; margin-top: 0.5rem;">Do you have what it takes to make the cut?</p>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="two-col">
+                <div class="career-info">
+                    <h2>Join Our Family</h2>
+                    <p>No matter what their experience level, one thing is certain: Wave Lengths stylists never get dull, because they never stop learning.</p>
+                    
+                    <p>From the moment a new stylist joins our team, they undergo intensive, hands-on training under a seasoned Wave Lengths stylist, and can expect to start seeing guests in about a month's time under the guidance of an educator.</p>
+                    
+                    <p>In as little as ten months, stylists can expect to be behind their own chair. And Wave Lengths continually provides special training on the latest trends and techniques, so every stylist can earn a reputation for being one of the best in the area.</p>
+
+                    <div class="benefits">
+                        <h3>Benefits Include:</h3>
+                        <ul>
+                            <li>Associate training programs</li>
+                            <li>In-house education</li>
+                            <li>Mentoring and coaching</li>
+                            <li>Retail commission bonus</li>
+                            <li>Retirement plan</li>
+                            <li>Monthly educational classes</li>
+                            <li>Featured national artists</li>
+                        </ul>
+                    </div>
+
+                    <div class="note">
+                        <strong>Note:</strong> While salons tend to come and go, Wave Lengths has stood the test of time, operating under the same name and management for more than 30 years.
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <h2>Apply Now</h2>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Experience Level *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Select one...</option>
+                                <option value="new-graduate">New Graduate</option>
+                                <option value="less-1-year">Less than 1 year</option>
+                                <option value="1-3-years">1-3 years</option>
+                                <option value="3-5-years">3-5 years</option>
+                                <option value="5-plus-years">5+ years</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell us about yourself *</label>
+                            <textarea id="message" name="message" placeholder="Why do you want to join Wave Lengths? What makes you passionate about hair styling?" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="portfolio">Portfolio/Instagram (optional)</label>
+                            <input type="text" id="portfolio" name="portfolio" placeholder="@username or website link">
+                        </div>
+
+                        <button type="submit" class="btn">Submit Application</button>
+                    </form>
+                    
+                    <div class="note" style="margin-top: 1.5rem;">
+                        <strong>Demo Note:</strong> This form uses Formspree (free for 50 submissions/month). To make it work, sign up at formspree.io and replace "YOUR_FORM_ID" in the code with your actual form endpoint.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-footer">
+        <div class="container">
+            <h3>This demo was built in one afternoon. Imagine what we could do together.</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:718-541-0794">718-541-0794</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:Necolious23@gmail.com">Necolious23@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/necolious-shaw-442873396/" target="_blank">Necolious Shaw</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Wave Lengths Salon Demo</p>
+        </div>
+    </footer>
+</body>
+</html>
