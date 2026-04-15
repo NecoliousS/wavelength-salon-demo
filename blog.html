@@ -3,145 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Wavelength SMS</title>
+    <title>Blog | Wave Lengths Salon</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        nav { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #6366f1; text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #6366f1; }
-        
-        .page-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; text-align: center; }
-        .page-header h1 { font-size: 3rem; }
-        
-        .blog { padding: 80px 0; }
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; }
-        
-        .blog-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .blog-image { height: 200px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
-        .blog-content { padding: 1.5rem; }
-        .blog-meta { color: #6366f1; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .blog-card h2 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #1e293b; }
-        .blog-card p { color: #666; margin-bottom: 1rem; }
-        .read-more { color: #6366f1; text-decoration: none; font-weight: 600; }
-        
-        .categories { padding: 20px 0 40px 0; text-align: center; }
-        .category-btn { display: inline-block; padding: 8px 20px; margin: 5px; border: 1px solid #ddd; border-radius: 20px; text-decoration: none; color: #555; transition: all 0.3s; }
-        .category-btn:hover, .category-btn.active { background: #6366f1; color: white; border-color: #6366f1; }
-        
-        footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; margin-top: 0; }
-        
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        nav { background: #1a1a1a; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #fff; font-size: 1.5rem; font-weight: 300; letter-spacing: 2px; }
+        .logo span { color: #c0a080; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 2rem; }
+        nav ul li a { color: #fff; text-decoration: none; transition: color 0.3s; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav ul li a:hover { color: #c0a080; }
+        .page-header { background: #1a1a1a; color: #fff; padding: 4rem 0; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; }
+        .section { padding: 4rem 0; }
+        .blog-intro { text-align: center; max-width: 800px; margin: 0 auto 3rem; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .product-card { background: #fff; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .product-image { height: 200px; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%); display: flex; align-items: center; justify-content: center; color: #999; font-style: italic; }
+        .product-content { padding: 1.5rem; }
+        .product-content h3 { margin-bottom: 0.5rem; color: #1a1a1a; font-weight: 400; }
+        .product-content p { color: #666; font-size: 0.95rem; margin-bottom: 1rem; }
+        .tag { display: inline-block; background: #c0a080; color: #fff; padding: 0.2rem 0.8rem; border-radius: 3px; font-size: 0.8rem; margin-bottom: 0.5rem; }
+        .post-meta { color: #999; font-size: 0.85rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+        .demo-footer { background: #111; color: #fff; padding: 3rem 0; text-align: center; border-top: 3px solid #c0a080; margin-top: 4rem; }
+        .demo-footer h3 { color: #c0a080; margin-bottom: 1rem; font-size: 1.8rem; }
+        .contact-info { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; }
+        .contact-item { text-align: center; }
+        .contact-item strong { display: block; color: #c0a080; margin-bottom: 0.5rem; }
+        .contact-item a { color: #fff; text-decoration: none; }
+        footer { background: #0a0a0a; color: #666; text-align: center; padding: 2rem 0; font-size: 0.8rem; }
         @media (max-width: 768px) {
-            .blog-grid { grid-template-columns: 1fr; }
-            .page-header h1 { font-size: 2rem; }
+            nav ul { display: none; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Wavelength SMS</a>
-            <ul class="nav-links">
+        <div class="container">
+            <div class="logo">WAVE <span>LENGTHS</span></div>
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Our Services</a></li>
                 <li><a href="careers.html">Careers</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="page-header">
-        <div class="container">
-            <h1>Blog</h1>
-            <p>Insights on business communication and customer engagement</p>
-        </div>
-    </div>
+    <header class="page-header">
+        <h1>Salon Blog</h1>
+    </header>
 
-    <section class="blog">
+    <section class="section">
         <div class="container">
-            <div class="categories">
-                <a href="#" class="category-btn active">All</a>
-                <a href="#" class="category-btn">SMS Marketing</a>
-                <a href="#" class="category-btn">Customer Service</a>
-                <a href="#" class="category-btn">Product Updates</a>
-                <a href="#" class="category-btn">Industry Trends</a>
+            <div class="blog-intro">
+                <p>Welcome to the Wave Lengths blog. Here we share hair care tips, product recommendations, and the latest trends from our Jackson salon.</p>
             </div>
-
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">📱</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">SMS Marketing • Jan 10, 2026</div>
-                        <h2>10 SMS Marketing Campaigns That Actually Work</h2>
-                        <p>Discover the proven strategies top brands use to drive engagement and sales through text messaging...</p>
-                        <a href="#" class="read-more">Read More →</a>
+            
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image">[Kerastase Product Image]</div>
+                    <div class="product-content">
+                        <span class="tag">Featured Product</span>
+                        <h3>Kerastase: The World's Best Hair Products</h3>
+                        <p>We are a Kerastase exclusive partner salon. Purchasing the world's BEST hair products has never been easier. Buy your Kerastase here at Wave Lengths.</p>
+                        <div class="post-meta">Available in-store • Professional consultation included</div>
                     </div>
                 </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">💬</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">Customer Service • Jan 5, 2026</div>
-                        <h2>Why Your Customers Prefer Text Over Email</h2>
-                        <p>New research shows 78% of consumers would rather text a business than call. Here's what that means...</p>
-                        <a href="#" class="read-more">Read More →</a>
+                <article class="product-card">
+                    <div class="product-image">[Hair Color Image]</div>
+                    <div class="product-content">
+                        <span class="tag">Color Care</span>
+                        <h3>Maintaining Your Color Between Visits</h3>
+                        <p>Learn how to keep your color vibrant and fresh for weeks after your salon visit. Tips from our certified color specialists.</p>
+                        <div class="post-meta">Posted March 15, 2026 • 3 min read</div>
                     </div>
                 </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">🔒</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">Product Updates • Dec 28, 2025</div>
-                        <h2>New Feature: Enhanced Security Controls</h2>
-                        <p>We're excited to announce two-factor authentication and advanced user permissions are now available...</p>
-                        <a href="#" class="read-more">Read More →</a>
+                <article class="product-card">
+                    <div class="product-image">[Treatment Image]</div>
+                    <div class="product-content">
+                        <span class="tag">Treatments</span>
+                        <h3>Why We Love Fusio Dose Treatments</h3>
+                        <p>Discover the exclusive in-salon conditioning treatment that offers intense, customized care for every hair type and concern.</p>
+                        <div class="post-meta">Posted February 28, 2026 • 2 min read</div>
                     </div>
                 </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">📊</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">Industry Trends • Dec 20, 2025</div>
-                        <h2>SMS Statistics Every Business Owner Should Know</h2>
-                        <p>98% open rates, 45% response rates. The numbers behind why SMS is the ultimate marketing channel...</p>
-                        <a href="#" class="read-more">Read More →</a>
+                <article class="product-card">
+                    <div class="product-image">[Styling Tips Image]</div>
+                    <div class="product-content">
+                        <span class="tag">Styling</span>
+                        <h3>Jackson's Summer Hair Guide</h3>
+                        <p>Beat the Mississippi humidity with these professional styling tips and product recommendations for sleek, frizz-free summer hair.</p>
+                        <div class="post-meta">Posted April 1, 2026 • 4 min read</div>
                     </div>
                 </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">🎯</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">SMS Marketing • Dec 15, 2025</div>
-                        <h2>How to Write the Perfect Marketing Text</h2>
-                        <p>160 characters to convince, convert, and delight. Here's the formula for SMS copy that converts...</p>
-                        <a href="#" class="read-more">Read More →</a>
+                <article class="product-card">
+                    <div class="product-image">[Salon News Image]</div>
+                    <div class="product-content">
+                        <span class="tag">News</span>
+                        <h3>Continuing Education at Wave Lengths</h3>
+                        <p>Every month we hold exciting educational classes including in-salon training and featured national artists. See what our team learned this month.</p>
+                        <div class="post-meta">Posted March 30, 2026 • 2 min read</div>
                     </div>
                 </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">⚙️</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">Product Updates • Dec 10, 2025</div>
-                        <h2>API Version 2.0 is Here</h2>
-                        <p>Faster, more reliable, and easier to use. See what's new in our latest API release...</p>
-                        <a href="#" class="read-more">Read More →</a>
+                <article class="product-card">
+                    <div class="product-image">[Keratin Treatment Image]</div>
+                    <div class="product-content">
+                        <span class="tag">Smoothing Treatments</span>
+                        <h3>Keratin vs. Express: Which is Right for You?</h3>
+                        <p>Understanding the difference between our Natural Keratin Smoothing Treatment and Express Keratin options.</p>
+                        <div class="post-meta">Posted January 20, 2026 • 5 min read</div>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
+    <section class="demo-footer">
+        <div class="container">
+            <h3>This demo was built in one afternoon. Imagine what we could do together.</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:718-541-0794">718-541-0794</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:Necolious23@gmail.com">Necolious23@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/necolious-shaw-442873396/" target="_blank">Necolious Shaw</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <p>&copy; 2026 Wavelength SMS. All rights reserved.</p>
+            <p>© 2026 Wave Lengths Salon Demo</p>
         </div>
     </footer>
 </body>
