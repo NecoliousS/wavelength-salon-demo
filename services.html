@@ -3,163 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Wavelength SMS</title>
+    <title>Our Services | Wave Lengths Salon</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        nav { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #6366f1; text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #6366f1; }
-        
-        .page-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; text-align: center; }
-        .page-header h1 { font-size: 3rem; }
-        
-        .services { padding: 80px 0; }
-        .service-card { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 4rem; align-items: center; }
-        .service-card:nth-child(even) { direction: rtl; }
-        .service-card:nth-child(even) > * { direction: ltr; }
-        .service-content h2 { font-size: 2rem; margin-bottom: 1rem; color: #1e293b; }
-        .service-content p { color: #555; margin-bottom: 1.5rem; font-size: 1.1rem; }
-        .feature-list { list-style: none; }
-        .feature-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
-        .feature-list li:before { content: "✓"; color: #6366f1; position: absolute; left: 0; font-weight: bold; }
-        
-        .service-image { background: #f1f5f9; height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
-        
-        .pricing { background: #f8fafc; padding: 80px 0; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        .pricing-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
-        .pricing-card.featured { border: 2px solid #6366f1; transform: scale(1.05); }
-        .price { font-size: 3rem; font-weight: bold; color: #6366f1; margin: 1rem 0; }
-        .price span { font-size: 1rem; color: #666; }
-        
-        footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; }
-        
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        nav { background: #1a1a1a; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #fff; font-size: 1.5rem; font-weight: 300; letter-spacing: 2px; }
+        .logo span { color: #c0a080; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 2rem; }
+        nav ul li a { color: #fff; text-decoration: none; transition: color 0.3s; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav ul li a:hover { color: #c0a080; }
+        .page-header { background: #1a1a1a; color: #fff; padding: 4rem 0; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; }
+        .section { padding: 4rem 0; }
+        .services-intro { text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; color: #666; }
+        .service-grid { display: grid; gap: 2rem; }
+        .service-card { background: #fff; padding: 2rem; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 4px solid #c0a080; }
+        .service-card h2 { color: #1a1a1a; margin-bottom: 1rem; font-weight: 400; font-size: 1.5rem; }
+        .service-card p { color: #666; margin-bottom: 1rem; }
+        .pricing { background: #f5f5f5; padding: 1rem; border-radius: 3px; margin-top: 1rem; }
+        .pricing h4 { color: #c0a080; margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .pricing ul { list-style: none; padding-left: 0; }
+        .pricing li { padding: 0.3rem 0; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; }
+        .pricing li:last-child { border-bottom: none; }
+        .price { font-weight: bold; color: #1a1a1a; }
+        .cta { text-align: center; margin-top: 3rem; padding: 2rem; background: #1a1a1a; color: #fff; border-radius: 5px; }
+        .cta h3 { margin-bottom: 1rem; color: #c0a080; }
+        .btn { display: inline-block; margin-top: 1rem; padding: 12px 30px; background: #c0a080; color: #fff; text-decoration: none; border-radius: 3px; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .btn:hover { background: #a08060; }
+        .demo-footer { background: #111; color: #fff; padding: 3rem 0; text-align: center; border-top: 3px solid #c0a080; margin-top: 4rem; }
+        .demo-footer h3 { color: #c0a080; margin-bottom: 1rem; font-size: 1.8rem; }
+        .contact-info { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; }
+        .contact-item { text-align: center; }
+        .contact-item strong { display: block; color: #c0a080; margin-bottom: 0.5rem; }
+        .contact-item a { color: #fff; text-decoration: none; }
+        footer { background: #0a0a0a; color: #666; text-align: center; padding: 2rem 0; font-size: 0.8rem; }
         @media (max-width: 768px) {
-            .service-card { grid-template-columns: 1fr; gap: 2rem; }
-            .service-card:nth-child(even) { direction: ltr; }
-            .page-header h1 { font-size: 2rem; }
+            nav ul { display: none; }
+            .pricing li { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Wavelength SMS</a>
-            <ul class="nav-links">
+        <div class="container">
+            <div class="logo">WAVE <span>LENGTHS</span></div>
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html" class="active">Our Services</a></li>
+                <li><a href="services.html">Our Services</a></li>
                 <li><a href="careers.html">Careers</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="page-header">
-        <div class="container">
-            <h1>Our Services</h1>
-            <p>Everything you need to communicate effectively</p>
-        </div>
-    </div>
+    <header class="page-header">
+        <h1>Our Services</h1>
+    </header>
 
-    <section class="services">
+    <section class="section">
         <div class="container">
-            <div class="service-card">
-                <div class="service-content">
-                    <h2>Two-Way SMS Messaging</h2>
-                    <p>Engage in real conversations with your customers. Our two-way messaging platform makes it easy to manage customer support, appointments, and inquiries via text.</p>
-                    <ul class="feature-list">
-                        <li>Real-time message delivery</li>
-                        <li>Conversation threading</li>
-                        <li>Auto-responses and scheduling</li>
-                        <li>File and image sharing (MMS)</li>
-                    </ul>
+            <p class="services-intro">We are known for creating beautiful hairstyles and show-stopping color, but we offer so much more. At Wave Lengths, you'll find everything you would expect from a full-service salon—all at your convenience.</p>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <h2>Consultations</h2>
+                    <p>Whether you're getting ready for a special occasion or want to revamp your look, Wave Lengths offers personal consultations to help you find a style you'll love.</p>
+                    <p><em>To schedule a consultation, call 601-956-6224.</em></p>
                 </div>
-                <div class="service-image">💬</div>
+
+                <div class="service-card">
+                    <h2>Hair Cuts & Styling</h2>
+                    <p>From sweeping bangs to sassy bobs, Wave Lengths stylists have mastered the art of framing faces. They don't just know the trends and the latest techniques—they know how to apply that knowledge to play up every customer's hair type, natural features and personal style.</p>
+                    <div class="pricing">
+                        <h4>Pricing</h4>
+                        <ul>
+                            <li>Haircut <span class="price">$30+</span></li>
+                            <li>Style <span class="price">$35+</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h2>Coloring</h2>
+                    <p>Hair color does more than change a shade. It adds body, dimension, movement and expression. We specialize in providing you with the exact color you're looking for, from the most naturally subtle highlights to the most head-turning transformations. Always performed by certified color specialists.</p>
+                    <div class="pricing">
+                        <h4>Pricing</h4>
+                        <ul>
+                            <li>Color <span class="price">$70+</span></li>
+                            <li>Full Foil (Highlights) <span class="price">$110+</span></li>
+                            <li>Partial Foil <span class="price">$87+</span></li>
+                            <li>Balayage <span class="price">$135+</span></li>
+                            <li>Additional Color <span class="price">$8</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h2>Conditioning Treatments</h2>
+                    <p>With time, even the healthiest hair can become damaged, dry, or lose its natural luster. We proudly offer Kerastase Fusio Dose, an exclusive, in-salon conditioning treatment that offers intense, customized conditioning for hair that needs moisture, color protection, strength, softness, or any combination.</p>
+                    <div class="pricing">
+                        <h4>Pricing</h4>
+                        <ul>
+                            <li>Fusio Dose Treatment <span class="price">$32</span></li>
+                            <li>Express Keratin Smoothing <span class="price">$135+</span></li>
+                            <li>Natural Keratin Smoothing <span class="price">$300+</span></li>
+                            <li>Heat Treatment <span class="price">$32</span></li>
+                            <li>Olaplex <span class="price">$30</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="service-card">
-                <div class="service-content">
-                    <h2>Bulk Text Campaigns</h2>
-                    <p>Reach thousands of customers instantly with our mass texting service. Perfect for marketing campaigns, flash sales, and important announcements.</p>
-                    <ul class="feature-list">
-                        <li>Segment targeting</li>
-                        <li>Personalized merge fields</li>
-                        <li>Delivery tracking and analytics</li>
-                        <li>Opt-in/opt-out management</li>
-                    </ul>
-                </div>
-                <div class="service-image">📢</div>
-            </div>
-
-            <div class="service-card">
-                <div class="service-content">
-                    <h2>API & Integrations</h2>
-                    <p>Developer-friendly REST API that integrates seamlessly with your existing CRM, e-commerce platform, or custom applications.</p>
-                    <ul class="feature-list">
-                        <li>Comprehensive documentation</li>
-                        <li>Webhook support</li>
-                        <li>SDKs for popular languages</li>
-                        <li>Zapier integration</li>
-                    </ul>
-                </div>
-                <div class="service-image">⚙️</div>
+            <div class="cta">
+                <h3>Ready to Transform Your Look?</h3>
+                <p>We are fast enough to fit your busy schedule, without taking up hours of your day.</p>
+                <a href="contact.html" class="btn">Schedule Appointment</a>
             </div>
         </div>
     </section>
 
-    <section class="pricing">
+    <section class="demo-footer">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Simple Pricing</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 2rem;">No contracts, no hidden fees</p>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <div class="price">$29<span>/month</span></div>
-                    <p>Perfect for small businesses</p>
-                    <ul style="list-style: none; margin: 2rem 0;">
-                        <li>1,000 messages/month</li>
-                        <li>1 phone number</li>
-                        <li>Basic analytics</li>
-                        <li>Email support</li>
-                    </ul>
-                    <a href="contact.html" style="display: block; padding: 12px; background: #6366f1; color: white; text-decoration: none; border-radius: 5px;">Get Started</a>
+            <h3>This demo was built in one afternoon. Imagine what we could do together.</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:718-541-0794">718-541-0794</a>
                 </div>
-                
-                <div class="pricing-card featured">
-                    <h3>Professional</h3>
-                    <div class="price">$79<span>/month</span></div>
-                    <p>For growing businesses</p>
-                    <ul style="list-style: none; margin: 2rem 0;">
-                        <li>5,000 messages/month</li>
-                        <li>3 phone numbers</li>
-                        <li>Advanced analytics</li>
-                        <li>API access</li>
-                        <li>Priority support</li>
-                    </ul>
-                    <a href="contact.html" style="display: block; padding: 12px; background: #6366f1; color: white; text-decoration: none; border-radius: 5px;">Get Started</a>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:Necolious23@gmail.com">Necolious23@gmail.com</a>
                 </div>
-                
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">Custom</div>
-                    <p>For large organizations</p>
-                    <ul style="list-style: none; margin: 2rem 0;">
-                        <li>Unlimited messages</li>
-                        <li>Dedicated account manager</li>
-                        <li>Custom integrations</li>
-                        <li>SLA guarantee</li>
-                        <li>24/7 phone support</li>
-                    </ul>
-                    <a href="contact.html" style="display: block; padding: 12px; background: #1e293b; color: white; text-decoration: none; border-radius: 5px;">Contact Sales</a>
+                <div class="contact-item">
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/necolious-shaw-442873396/" target="_blank">Necolious Shaw</a>
                 </div>
             </div>
         </div>
@@ -167,7 +150,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Wavelength SMS. All rights reserved.</p>
+            <p>© 2026 Wave Lengths Salon Demo</p>
         </div>
     </footer>
 </body>
